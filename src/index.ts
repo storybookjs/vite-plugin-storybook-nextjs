@@ -6,6 +6,8 @@ import { getDefineEnv } from "next/dist/build/webpack/plugins/define-env-plugin"
 import { findPagesDir } from "next/dist/lib/find-pages-dir";
 import type { NextConfigComplete } from "next/dist/server/config-shared";
 import type { Plugin } from "vite";
+import { applyFastRefresh } from "./utils/fast-refresh/fast-refresh";
+import * as FastRefreshUtils from "./utils/fast-refresh/utils";
 import * as NextUtils from "./utils/nextjs";
 import { getVitestSWCTransformConfig } from "./utils/swc/transform";
 import { isDefined } from "./utils/typescript";
@@ -22,9 +24,23 @@ type VitePluginOptions = {
 	 * @default process.cwd()
 	 */
 	dir?: string;
+	/**
+	 * Skip fast refresh transformation
+	 * @default false
+	 */
+	skipFastRefresh?: boolean;
+	/**
+	 * Enable source maps
+	 * @default true
+	 */
+	sourceMaps?: boolean | "inline";
 };
 
-function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin {
+function VitePlugin({
+	dir = process.cwd(),
+	skipFastRefresh = false,
+	sourceMaps = true,
+}: VitePluginOptions = {}): Plugin {
 	const resolvedDir = resolve(dir);
 
 	let nextConfig: NextConfigComplete;
@@ -32,7 +48,10 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin {
 	let nextDirectories: ReturnType<typeof findPagesDir>;
 	let isServerEnvironment: boolean;
 	let envConfig: Env;
+	let isDev: boolean;
+	let devBase = "/";
 
+	const getShouldApplyFastRefresh = () => !skipFastRefresh && isDev;
 	const getTranspiledPackages = () => nextConfig?.transpilePackages ?? [];
 
 	return {
@@ -43,7 +62,20 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin {
 				this.addWatchFile(configPath);
 			}
 		},
+		resolveId(id) {
+			if (id === FastRefreshUtils.runtimePublicPath) {
+				return id;
+			}
+		},
+		load(id) {
+			if (id === FastRefreshUtils.runtimePublicPath) {
+				console;
+				return FastRefreshUtils.runtimeCode;
+			}
+		},
 		async config(config, env) {
+			isDev = env.mode === "development";
+
 			nextConfig = await NextUtils.getConfig(resolvedDir);
 			nextDirectories = findPagesDir(resolvedDir);
 			loadedJSConfig = await loadJsConfig(resolvedDir, nextConfig);
@@ -82,7 +114,7 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin {
 						isNodeOrEdgeCompilation: false,
 						isNodeServer: false,
 						clientRouterFilters: undefined,
-						dev: env.mode === "development",
+						dev: isDev,
 						middlewareMatchers: undefined,
 						hasRewrites: false,
 						distDir: nextConfig.distDir,
@@ -111,6 +143,10 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin {
 			};
 		},
 
+		configResolved(config) {
+			devBase = config.base;
+		},
+
 		async transform(code, id) {
 			if (excluded.test(id) || !included.test(id)) {
 				return;
@@ -118,7 +154,7 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin {
 
 			const inputSourceMap = this.getCombinedSourcemap();
 
-			const output = await transform(
+			const swcOutput = await transform(
 				code,
 				getVitestSWCTransformConfig({
 					filename: id,
@@ -127,10 +163,29 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin {
 					loadedJSConfig,
 					nextConfig,
 					nextDirectories,
+					sourceMaps,
 				}),
 			);
 
-			return output;
+			if (getShouldApplyFastRefresh()) {
+				return applyFastRefresh(swcOutput, id);
+			}
+
+			return swcOutput;
+		},
+		async transformIndexHtml() {
+			if (getShouldApplyFastRefresh()) {
+				return [
+					{
+						tag: "script",
+						attrs: { type: "module" },
+						children: FastRefreshUtils.preambleCode.replace(
+							"__BASE__",
+							devBase,
+						),
+					},
+				];
+			}
 		},
 	};
 }

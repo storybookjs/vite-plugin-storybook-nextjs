@@ -22,7 +22,6 @@ const regeneratorRuntimePath = require.resolve(
 
 function getBaseSWCOptions({
 	filename,
-	jest,
 	development,
 	hasReactRefresh,
 	globalWindow,
@@ -33,6 +32,7 @@ function getBaseSWCOptions({
 	resolvedBaseUrl,
 	jsConfig,
 	swcCacheDir,
+	sourceMaps,
 }: {
 	filename: string;
 	jest?: boolean;
@@ -46,6 +46,7 @@ function getBaseSWCOptions({
 	resolvedBaseUrl?: ResolvedBaseUrl;
 	jsConfig: JsConfig;
 	swcCacheDir?: string;
+	sourceMaps: boolean | "inline";
 }) {
 	const parserConfig = getParserOptions({ filename, jsConfig });
 	const paths = jsConfig?.compilerOptions?.paths;
@@ -110,7 +111,9 @@ function getBaseSWCOptions({
 				},
 			},
 		},
-		sourceMaps: "inline",
+		sourceMaps,
+		inlineSourcesContent: sourceMaps,
+		sourceFileName: filename,
 		removeConsole: compilerOptions?.removeConsole,
 		reactRemoveProperties: false,
 		// Map the k-v map to an array of pairs.
@@ -160,6 +163,7 @@ type VitestSWCOptionsParams = {
 	resolvedBaseUrl?: ResolvedBaseUrl;
 	pagesDir?: string;
 	serverComponents?: boolean;
+	sourceMaps: boolean | "inline";
 };
 
 /**
@@ -175,12 +179,13 @@ export function getVitestSWCOptions({
 	jsConfig,
 	resolvedBaseUrl,
 	pagesDir,
+	sourceMaps,
 }: VitestSWCOptionsParams) {
 	const baseOptions = getBaseSWCOptions({
 		filename,
 		jest: true,
 		development: false,
-		hasReactRefresh: false,
+		hasReactRefresh: true,
 		globalWindow: !isServer,
 		modularizeImports,
 		swcPlugins,
@@ -188,6 +193,7 @@ export function getVitestSWCOptions({
 		jsConfig,
 		resolvedBaseUrl,
 		esm,
+		sourceMaps,
 	});
 
 	const useCjsModules = shouldOutputCommonJs(filename);

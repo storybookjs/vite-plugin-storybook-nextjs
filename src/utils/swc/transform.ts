@@ -12,6 +12,7 @@ type VitestSWCTransformConfigParams = {
 	loadedJSConfig: Awaited<ReturnType<typeof loadJsConfig>>;
 	nextDirectories: ReturnType<typeof findPagesDir>;
 	nextConfig: NextConfigComplete;
+	sourceMaps: boolean | "inline";
 };
 
 /**
@@ -24,6 +25,7 @@ export const getVitestSWCTransformConfig = ({
 	loadedJSConfig,
 	nextDirectories,
 	nextConfig,
+	sourceMaps,
 }: VitestSWCTransformConfigParams) => {
 	const baseOptions = getVitestSWCOptions({
 		isServer: isServerEnvironment,
@@ -35,6 +37,7 @@ export const getVitestSWCTransformConfig = ({
 		swcPlugins: nextConfig.experimental.swcPlugins,
 		compilerOptions: nextConfig?.compilerOptions,
 		esm: true,
+		sourceMaps,
 	});
 	return {
 		...baseOptions,
