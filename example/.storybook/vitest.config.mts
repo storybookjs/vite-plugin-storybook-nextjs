@@ -9,6 +9,7 @@ export default defineConfig({
     vitePluginNext({ dir: path.join(__dirname, "..") }),
     storybookTest({
       renderer: "react",
+      snapshot: false,
     }),
     Inspect({ build: true, outputDir: ".vite-inspect" }),
   ],

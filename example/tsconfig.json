@@ -27,7 +27,11 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "vitest.config.mts"
+    "vitest.config.mts",
+    "vitest.js",
+    "vitest.cts",
+    "vitest.coverage.js",
+    "vitest.coverage.mts"
   ],
   "exclude": ["node_modules"]
 }
