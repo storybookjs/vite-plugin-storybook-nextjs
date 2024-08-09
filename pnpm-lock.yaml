@@ -173,6 +173,9 @@ importers:
       postcss:
         specifier: ^8.4.38
         version: 8.4.38
+      pretty-hrtime:
+        specifier: ^1.0.3
+        version: 1.0.3
       serve:
         specifier: ^14.2.3
         version: 14.2.3
@@ -4162,6 +4165,10 @@ packages:
   pretty-format@29.7.0:
     resolution: {integrity: sha512-Pdlw/oPxN+aXdmM9R00JVC9WVFoCLTKJvDVLgmJ+qAffBMxsV85l/Lu7sNx4zSzPyoL2euImuEwHhOXdEgNFZQ==, tarball: https://registry.npmjs.org/pretty-format/-/pretty-format-29.7.0.tgz}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+
+  pretty-hrtime@1.0.3:
+    resolution: {integrity: sha512-66hKPCr+72mlfiSjlEB1+45IjXSqvVAIy6mocupoww4tBFE9R9IhwwUGoI4G++Tc9Aq+2rxOt0RFU6gPcrte0A==, tarball: https://registry.npmjs.org/pretty-hrtime/-/pretty-hrtime-1.0.3.tgz}
+    engines: {node: '>= 0.8'}
 
   pretty-ms@7.0.1:
     resolution: {integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==, tarball: https://registry.npmjs.org/pretty-ms/-/pretty-ms-7.0.1.tgz}
@@ -9596,6 +9603,8 @@ snapshots:
       '@jest/schemas': 29.6.3
       ansi-styles: 5.2.0
       react-is: 18.3.1
+
+  pretty-hrtime@1.0.3: {}
 
   pretty-ms@7.0.1:
     dependencies:

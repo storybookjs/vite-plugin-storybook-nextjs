@@ -5,6 +5,8 @@ module.exports = class CustomReporter extends ReportBase {
   constructor(opts) {
     super();
 
+    console.log({ opts: opts.foo });
+
     // Options passed from configuration are available here
     this.file = opts.file;
   }
@@ -14,11 +16,9 @@ module.exports = class CustomReporter extends ReportBase {
     // Establish a connection to the Storybook server
   }
 
-  onDetail(node) {
+  onDetail(node, context) {
     const fc = node.getFileCoverage();
     const key = fc.path;
-    // console.log({ fc, key });
-    // Collect coverage data
   }
 
   onEnd() {
