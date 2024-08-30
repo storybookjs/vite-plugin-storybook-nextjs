@@ -17,6 +17,12 @@ const config: StorybookConfig = {
     experimentalRSC: true,
   },
   staticDirs: ["../public"],
+  experimental_serverChannel: async (channel, options) => {
+    const x = await options.presets.apply("stories");
+    const { exec } = require("../vitest-cjs");
+    exec(channel);
+    return channel;
+  },
 };
 
 export default config;
