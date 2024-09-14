@@ -67,7 +67,7 @@ export function vitePluginNextFont() {
 
       let fontFaceDeclaration: FontFaceDeclaration | undefined;
 
-      const pathSep = path.sep;
+      const pathSep = path.posix.sep;
 
       if (
         sourceWithoutQuery.endsWith(
