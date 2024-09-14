@@ -92,8 +92,8 @@ export function vitePluginNextFont() {
           );
 
           const fontPath = path
-	  	.join(importerDirPath, importerRelativeFontPath)
-		.replaceAll(path.win32.sep, path.posix.sep);
+	    .join(importerDirPath, importerRelativeFontPath)
+	    .replaceAll(path.win32.sep, path.posix.sep);
 
           if (devMode) {
             return {
