@@ -9,8 +9,18 @@ type Env = "browser" | "node";
 const getEntryPoint = (subPath: string, env: Env) =>
   require.resolve(`${VITEST_PLUGIN_NAME}/${env}/mocks/${subPath}`);
 
+const nextPackageJson = require("next/package.json");
+
+const nextMajorVersion = Number.parseInt(
+  String(nextPackageJson?.version).split(".").at(0) ?? "",
+  10,
+);
+
 export const getAlias = (env: Env) => ({
-  "next/headers": getEntryPoint("headers", env),
+  "next/headers":
+    nextMajorVersion <= 14
+      ? getEntryPoint("v14-headers", env)
+      : getEntryPoint("headers", env),
   "@storybook/nextjs/headers.mock": getEntryPoint("headers", env),
   "@storybook/nextjs-vite/headers.mock": getEntryPoint("headers", env),
   "@storybook/experimental-nextjs-vite/headers.mock": getEntryPoint(

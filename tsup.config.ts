@@ -11,6 +11,7 @@ export default defineConfig([
       "src/plugins/next-mocks/alias/headers/cookies.ts",
       "src/plugins/next-mocks/alias/headers/headers.ts",
       "src/plugins/next-mocks/alias/headers/index.ts",
+      "src/plugins/next-mocks/alias/headers/v14.ts",
       "src/plugins/next-mocks/alias/cache/index.ts",
       "src/plugins/next-mocks/alias/navigation/index.ts",
       "src/plugins/next-mocks/alias/router/index.ts",
