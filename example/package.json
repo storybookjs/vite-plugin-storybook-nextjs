@@ -15,9 +15,9 @@
     "inspect": "serve .storybook/.vite-inspect"
   },
   "dependencies": {
-    "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "^15.0.3",
+    "react": "^19.0.0-rc",
+    "react-dom": "^19.0.0-rc",
     "styled-jsx": "^5.1.6"
   },
   "devDependencies": {
@@ -36,8 +36,8 @@
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
     "@vitest/browser": "^2.1.4",
     "autoprefixer": "^10.4.19",
     "bootstrap": "^5.3.3",
@@ -52,5 +52,9 @@
     "typescript": "^5",
     "vite-plugin-inspect": "^0.8.5",
     "vitest": "^2.1.4"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
   }
 }
