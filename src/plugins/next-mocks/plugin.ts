@@ -10,14 +10,8 @@ type Env = "browser" | "node";
 const getEntryPoint = (subPath: string, env: Env) =>
   require.resolve(`${VITEST_PLUGIN_NAME}/${env}/mocks/${subPath}`);
 
-export const getAlias = (rootDir: string, env: Env) => {
-  const resolvedDir = resolve(rootDir);
-
-  const nextPackageJsonPath = require.resolve("next/package.json", {
-    paths: [resolvedDir],
-  });
-
-  const nextPackageJson = require(nextPackageJsonPath);
+export const getAlias = (env: Env) => {
+  const nextPackageJson = require("next/package.json");
 
   const nextMajorVersion = Number.parseInt(
     String(nextPackageJson?.version).split(".").at(0) ?? "",
@@ -71,7 +65,7 @@ export const vitePluginNextMocks = (rootDir: string) =>
       const aliasEnv = getExecutionEnvironment(config);
       return {
         resolve: {
-          alias: getAlias(rootDir, aliasEnv),
+          alias: getAlias(aliasEnv),
         },
       };
     },
