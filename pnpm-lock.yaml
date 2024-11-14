@@ -12,8 +12,8 @@ importers:
   .:
     dependencies:
       '@next/env':
-        specifier: ^14.2.5
-        version: 14.2.5
+        specifier: ^15.0.3
+        version: 15.0.3
       image-size:
         specifier: ^1.1.1
         version: 1.1.1
@@ -23,6 +23,12 @@ importers:
       module-alias:
         specifier: ^2.2.3
         version: 2.2.3
+      next:
+        specifier: ^15.0.3
+        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
+      react:
+        specifier: ^18 || ^19.0.0-rc
+        version: 19.0.0-rc-2ec26bc4-20241111
       ts-dedent:
         specifier: ^2.2.0
         version: 2.2.0
@@ -41,20 +47,14 @@ importers:
         specifier: ^18
         version: 18.19.38
       '@types/react':
-        specifier: npm:types-react@rc
-        version: types-react@19.0.0-rc.1
+        specifier: ^18
+        version: 18.3.3
       auto:
         specifier: ^11.2.0
         version: 11.2.0(@types/node@18.19.38)(typescript@5.4.5)
       lefthook:
         specifier: ^1.6.16
         version: 1.6.16
-      next:
-        specifier: ^15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
-      react:
-        specifier: 19.0.0-rc-2ec26bc4-20241111
-        version: 19.0.0-rc-2ec26bc4-20241111
       rollup:
         specifier: ^4.18.0
         version: 4.18.0
@@ -747,9 +747,6 @@ packages:
   '@mswjs/interceptors@0.36.9':
     resolution: {integrity: sha512-mMRDUBwSNeCgjSMEWfjoh4Rm9fbyZ7xQ9SBq8eGHiiyRn1ieTip3pNEt0wxWVPPxR4i1Rv9bTkeEbkX7M4c15A==}
     engines: {node: '>=18'}
-
-  '@next/env@14.2.5':
-    resolution: {integrity: sha512-/zZGkrTOsraVfYjGP8uM0p6r0BDT6xWpkjdVbcz66PJVSpwXX3yNiRycxAuDfBKGWBrZBXRuK/YVlkNgxHGwmA==}
 
   '@next/env@15.0.3':
     resolution: {integrity: sha512-t9Xy32pjNOvVn2AS+Utt6VmyrshbpfUMhIjFO60gI58deSo/KgLOp31XZ4O+kY/Is8WAGYwA5gR7kOb1eORDBA==}
@@ -4237,8 +4234,6 @@ snapshots:
       is-node-process: 1.2.0
       outvariant: 1.4.3
       strict-event-emitter: 0.5.1
-
-  '@next/env@14.2.5': {}
 
   '@next/env@15.0.3': {}
 
