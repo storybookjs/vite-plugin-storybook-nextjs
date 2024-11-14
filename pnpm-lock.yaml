@@ -23,6 +23,12 @@ importers:
       module-alias:
         specifier: ^2.2.3
         version: 2.2.3
+      next:
+        specifier: ^14.2.5 || ^15.0.3
+        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@18.3.1))(react@18.3.1)(sass@1.77.6)
+      react:
+        specifier: ^18 || ^19.0.0-rc
+        version: 18.3.1
       ts-dedent:
         specifier: ^2.2.0
         version: 2.2.0
@@ -49,12 +55,6 @@ importers:
       lefthook:
         specifier: ^1.6.16
         version: 1.6.16
-      next:
-        specifier: ^15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
-      react:
-        specifier: ^19.0.0-rc
-        version: 19.0.0-rc-2ec26bc4-20241111
       rollup:
         specifier: ^4.18.0
         version: 4.18.0
@@ -78,20 +78,20 @@ importers:
     dependencies:
       next:
         specifier: ^15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
+        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(sass@1.77.6)
       react:
         specifier: ^19.0.0-rc
-        version: 19.0.0-rc-2ec26bc4-20241111
+        version: 19.0.0-rc-fb9a90fa48-20240614
       react-dom:
         specifier: ^19.0.0-rc
-        version: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
+        version: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
       styled-jsx:
         specifier: ^5.1.6
-        version: 5.1.6(react@19.0.0-rc-2ec26bc4-20241111)
+        version: 5.1.6(react@19.0.0-rc-fb9a90fa48-20240614)
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^3.2.2
-        version: 3.2.2(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))
+        version: 3.2.2(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))
       '@storybook/addon-actions':
         specifier: ^8.4.1
         version: 8.4.1(storybook@8.4.1(prettier@3.3.2))
@@ -100,25 +100,25 @@ importers:
         version: 8.4.1(storybook@8.4.1(prettier@3.3.2))(types-react@19.0.0-rc.1)
       '@storybook/addon-links':
         specifier: ^8.4.1
-        version: 8.4.1(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))
+        version: 8.4.1(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))
       '@storybook/addon-onboarding':
         specifier: ^8.4.1
-        version: 8.4.1(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))
+        version: 8.4.1(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))
       '@storybook/addon-toolbars':
         specifier: ^8.4.1
         version: 8.4.1(storybook@8.4.1(prettier@3.3.2))
       '@storybook/blocks':
         specifier: ^8.4.1
-        version: 8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))
+        version: 8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))
       '@storybook/experimental-addon-test':
         specifier: ^8.4.1
-        version: 8.4.1(@vitest/browser@2.1.4(@types/node@20.14.6)(playwright@1.45.3)(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))(vitest@2.1.4))(@vitest/runner@2.1.4)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))(vitest@2.1.4(@types/node@20.14.6)(@vitest/browser@2.1.4)(happy-dom@14.12.3)(jsdom@24.1.1)(msw@2.6.0(@types/node@20.14.6)(typescript@5.4.5))(sass@1.77.6)(terser@5.31.1))
+        version: 8.4.1(@vitest/browser@2.1.4(@types/node@20.14.6)(playwright@1.45.3)(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))(vitest@2.1.4))(@vitest/runner@2.1.4)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))(vitest@2.1.4(@types/node@20.14.6)(@vitest/browser@2.1.4)(happy-dom@14.12.3)(jsdom@24.1.1)(msw@2.6.0(@types/node@20.14.6)(typescript@5.4.5))(sass@1.77.6)(terser@5.31.1))
       '@storybook/experimental-nextjs-vite':
         specifier: ^8.4.1
-        version: 8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(next@15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))
+        version: 8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(next@15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(sass@1.77.6))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))
       '@storybook/react':
         specifier: ^8.4.1
-        version: 8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)
+        version: 8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)
       '@storybook/test':
         specifier: ^8.4.1
         version: 8.4.1(storybook@8.4.1(prettier@3.3.2))
@@ -130,7 +130,7 @@ importers:
         version: 6.4.6(vitest@2.1.4(@types/node@20.14.6)(@vitest/browser@2.1.4)(happy-dom@14.12.3)(jsdom@24.1.1)(msw@2.6.0(@types/node@20.14.6)(typescript@5.4.5))(sass@1.77.6)(terser@5.31.1))
       '@testing-library/react':
         specifier: ^16.0.0
-        version: 16.0.0(@testing-library/dom@10.3.2)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
+        version: 16.0.0(@testing-library/dom@10.3.2)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
       '@types/node':
         specifier: ^20
         version: 20.14.6
@@ -2894,8 +2894,8 @@ packages:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
 
-  react@19.0.0-rc-2ec26bc4-20241111:
-    resolution: {integrity: sha512-O/mUrCUyA3Q6OTUjheJtOZYO+Zce86p8msLX8/uKQLNl5y1hwEl9ATl8eGb1NO29CYYccyaaxSmXKrqh1fx5Gw==}
+  react@19.0.0-rc-fb9a90fa48-20240614:
+    resolution: {integrity: sha512-nvE3Gy+IOIfH/DXhkyxFVQSrITarFcQz4+shzC/McxQXEUSonpw2oDy/Wi9hdDtV3hlP12VYuDL95iiBREedNQ==}
     engines: {node: '>=0.10.0'}
 
   read-cache@1.0.0:
@@ -3838,12 +3838,12 @@ snapshots:
       '@types/tough-cookie': 4.0.5
       tough-cookie: 4.1.4
 
-  '@chromatic-com/storybook@3.2.2(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))':
+  '@chromatic-com/storybook@3.2.2(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))':
     dependencies:
       chromatic: 11.16.3
       filesize: 10.1.2
       jsonfile: 6.1.0
-      react-confetti: 6.1.0(react@19.0.0-rc-2ec26bc4-20241111)
+      react-confetti: 6.1.0(react@19.0.0-rc-fb9a90fa48-20240614)
       storybook: 8.4.1(prettier@3.3.2)
       strip-ansi: 7.1.0
     transitivePeerDependencies:
@@ -4533,14 +4533,14 @@ snapshots:
       '@storybook/global': 5.0.0
       storybook: 8.4.1(prettier@3.3.2)
 
-  '@storybook/addon-links@8.4.1(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))':
+  '@storybook/addon-links@8.4.1(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))':
     dependencies:
       '@storybook/csf': 0.1.11
       '@storybook/global': 5.0.0
       storybook: 8.4.1(prettier@3.3.2)
       ts-dedent: 2.2.0
     optionalDependencies:
-      react: 19.0.0-rc-2ec26bc4-20241111
+      react: 19.0.0-rc-fb9a90fa48-20240614
 
   '@storybook/addon-measure@8.4.1(storybook@8.4.1(prettier@3.3.2))':
     dependencies:
@@ -4548,9 +4548,9 @@ snapshots:
       storybook: 8.4.1(prettier@3.3.2)
       tiny-invariant: 1.3.3
 
-  '@storybook/addon-onboarding@8.4.1(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))':
+  '@storybook/addon-onboarding@8.4.1(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))':
     dependencies:
-      react-confetti: 6.1.0(react@19.0.0-rc-2ec26bc4-20241111)
+      react-confetti: 6.1.0(react@19.0.0-rc-fb9a90fa48-20240614)
       storybook: 8.4.1(prettier@3.3.2)
     transitivePeerDependencies:
       - react
@@ -4580,15 +4580,15 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/blocks@8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))':
+  '@storybook/blocks@8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))':
     dependencies:
       '@storybook/csf': 0.1.11
-      '@storybook/icons': 1.2.12(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)
+      '@storybook/icons': 1.2.12(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)
       storybook: 8.4.1(prettier@3.3.2)
       ts-dedent: 2.2.0
     optionalDependencies:
-      react: 19.0.0-rc-2ec26bc4-20241111
-      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
+      react: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
 
   '@storybook/builder-vite@8.4.1(storybook@8.4.1(prettier@3.3.2))(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))':
     dependencies:
@@ -4631,11 +4631,11 @@ snapshots:
     dependencies:
       type-fest: 2.19.0
 
-  '@storybook/experimental-addon-test@8.4.1(@vitest/browser@2.1.4(@types/node@20.14.6)(playwright@1.45.3)(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))(vitest@2.1.4))(@vitest/runner@2.1.4)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))(vitest@2.1.4(@types/node@20.14.6)(@vitest/browser@2.1.4)(happy-dom@14.12.3)(jsdom@24.1.1)(msw@2.6.0(@types/node@20.14.6)(typescript@5.4.5))(sass@1.77.6)(terser@5.31.1))':
+  '@storybook/experimental-addon-test@8.4.1(@vitest/browser@2.1.4(@types/node@20.14.6)(playwright@1.45.3)(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))(vitest@2.1.4))(@vitest/runner@2.1.4)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))(vitest@2.1.4(@types/node@20.14.6)(@vitest/browser@2.1.4)(happy-dom@14.12.3)(jsdom@24.1.1)(msw@2.6.0(@types/node@20.14.6)(typescript@5.4.5))(sass@1.77.6)(terser@5.31.1))':
     dependencies:
       '@storybook/csf': 0.1.11
       '@storybook/global': 5.0.0
-      '@storybook/icons': 1.2.12(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)
+      '@storybook/icons': 1.2.12(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)
       '@storybook/instrumenter': 8.4.1(storybook@8.4.1(prettier@3.3.2))
       '@storybook/test': 8.4.1(storybook@8.4.1(prettier@3.3.2))
       '@storybook/theming': 8.4.1(storybook@8.4.1(prettier@3.3.2))
@@ -4651,16 +4651,16 @@ snapshots:
       - react
       - react-dom
 
-  '@storybook/experimental-nextjs-vite@8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(next@15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))':
+  '@storybook/experimental-nextjs-vite@8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(next@15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(sass@1.77.6))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))':
     dependencies:
       '@storybook/builder-vite': 8.4.1(storybook@8.4.1(prettier@3.3.2))(vite@5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1))
-      '@storybook/react': 8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)
+      '@storybook/react': 8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)
       '@storybook/test': 8.4.1(storybook@8.4.1(prettier@3.3.2))
-      next: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
-      react: 19.0.0-rc-2ec26bc4-20241111
-      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
+      next: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(sass@1.77.6)
+      react: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
       storybook: 8.4.1(prettier@3.3.2)
-      styled-jsx: 5.1.6(react@19.0.0-rc-2ec26bc4-20241111)
+      styled-jsx: 5.1.6(react@19.0.0-rc-fb9a90fa48-20240614)
       vite: 5.3.1(@types/node@20.14.6)(sass@1.77.6)(terser@5.31.1)
       vite-plugin-storybook-nextjs: 'link:'
     optionalDependencies:
@@ -4677,10 +4677,10 @@ snapshots:
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@storybook/icons@1.2.12(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)':
+  '@storybook/icons@1.2.12(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)':
     dependencies:
-      react: 19.0.0-rc-2ec26bc4-20241111
-      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
+      react: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
 
   '@storybook/instrumenter@8.4.1(storybook@8.4.1(prettier@3.3.2))':
     dependencies:
@@ -4702,22 +4702,22 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       storybook: 8.4.1(prettier@3.3.2)
 
-  '@storybook/react-dom-shim@8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))':
+  '@storybook/react-dom-shim@8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))':
     dependencies:
-      react: 19.0.0-rc-2ec26bc4-20241111
-      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
+      react: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
       storybook: 8.4.1(prettier@3.3.2)
 
-  '@storybook/react@8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)':
+  '@storybook/react@8.4.1(@storybook/test@8.4.1(storybook@8.4.1(prettier@3.3.2)))(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))(typescript@5.4.5)':
     dependencies:
       '@storybook/components': 8.4.1(storybook@8.4.1(prettier@3.3.2))
       '@storybook/global': 5.0.0
       '@storybook/manager-api': 8.4.1(storybook@8.4.1(prettier@3.3.2))
       '@storybook/preview-api': 8.4.1(storybook@8.4.1(prettier@3.3.2))
-      '@storybook/react-dom-shim': 8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(storybook@8.4.1(prettier@3.3.2))
+      '@storybook/react-dom-shim': 8.4.1(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(storybook@8.4.1(prettier@3.3.2))
       '@storybook/theming': 8.4.1(storybook@8.4.1(prettier@3.3.2))
-      react: 19.0.0-rc-2ec26bc4-20241111
-      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
+      react: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
       storybook: 8.4.1(prettier@3.3.2)
     optionalDependencies:
       '@storybook/test': 8.4.1(storybook@8.4.1(prettier@3.3.2))
@@ -4790,12 +4790,12 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
 
-  '@testing-library/react@16.0.0(@testing-library/dom@10.3.2)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)':
+  '@testing-library/react@16.0.0(@testing-library/dom@10.3.2)(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)':
     dependencies:
       '@babel/runtime': 7.24.7
       '@testing-library/dom': 10.3.2
-      react: 19.0.0-rc-2ec26bc4-20241111
-      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
+      react: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
     optionalDependencies:
       '@types/react': types-react@19.0.0-rc.1
       '@types/react-dom': types-react-dom@19.0.0-rc.1
@@ -6161,7 +6161,7 @@ snapshots:
 
   nested-error-stacks@2.0.1: {}
 
-  next@15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6):
+  next@15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@18.3.1))(react@18.3.1)(sass@1.77.6):
     dependencies:
       '@next/env': 15.0.3
       '@swc/counter': 0.1.3
@@ -6169,9 +6169,35 @@ snapshots:
       busboy: 1.6.0
       caniuse-lite: 1.0.30001636
       postcss: 8.4.31
-      react: 19.0.0-rc-2ec26bc4-20241111
-      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111)
-      styled-jsx: 5.1.6(react@19.0.0-rc-2ec26bc4-20241111)
+      react: 18.3.1
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@18.3.1)
+      styled-jsx: 5.1.6(react@18.3.1)
+    optionalDependencies:
+      '@next/swc-darwin-arm64': 15.0.3
+      '@next/swc-darwin-x64': 15.0.3
+      '@next/swc-linux-arm64-gnu': 15.0.3
+      '@next/swc-linux-arm64-musl': 15.0.3
+      '@next/swc-linux-x64-gnu': 15.0.3
+      '@next/swc-linux-x64-musl': 15.0.3
+      '@next/swc-win32-arm64-msvc': 15.0.3
+      '@next/swc-win32-x64-msvc': 15.0.3
+      sass: 1.77.6
+      sharp: 0.33.5
+    transitivePeerDependencies:
+      - '@babel/core'
+      - babel-plugin-macros
+
+  next@15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)(sass@1.77.6):
+    dependencies:
+      '@next/env': 15.0.3
+      '@swc/counter': 0.1.3
+      '@swc/helpers': 0.5.13
+      busboy: 1.6.0
+      caniuse-lite: 1.0.30001636
+      postcss: 8.4.31
+      react: 19.0.0-rc-fb9a90fa48-20240614
+      react-dom: 19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614)
+      styled-jsx: 5.1.6(react@19.0.0-rc-fb9a90fa48-20240614)
     optionalDependencies:
       '@next/swc-darwin-arm64': 15.0.3
       '@next/swc-darwin-x64': 15.0.3
@@ -6431,9 +6457,9 @@ snapshots:
       minimist: 1.2.8
       strip-json-comments: 2.0.1
 
-  react-confetti@6.1.0(react@19.0.0-rc-2ec26bc4-20241111):
+  react-confetti@6.1.0(react@19.0.0-rc-fb9a90fa48-20240614):
     dependencies:
-      react: 19.0.0-rc-2ec26bc4-20241111
+      react: 19.0.0-rc-fb9a90fa48-20240614
       tween-functions: 1.2.0
 
   react-dom@18.3.1(react@18.3.1):
@@ -6442,9 +6468,14 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111):
+  react-dom@19.0.0-rc-2ec26bc4-20241111(react@18.3.1):
     dependencies:
-      react: 19.0.0-rc-2ec26bc4-20241111
+      react: 18.3.1
+      scheduler: 0.25.0-rc-2ec26bc4-20241111
+
+  react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-fb9a90fa48-20240614):
+    dependencies:
+      react: 19.0.0-rc-fb9a90fa48-20240614
       scheduler: 0.25.0-rc-2ec26bc4-20241111
 
   react-is@17.0.2: {}
@@ -6453,7 +6484,7 @@ snapshots:
     dependencies:
       loose-envify: 1.4.0
 
-  react@19.0.0-rc-2ec26bc4-20241111: {}
+  react@19.0.0-rc-fb9a90fa48-20240614: {}
 
   read-cache@1.0.0:
     dependencies:
@@ -6791,10 +6822,15 @@ snapshots:
   strip-json-comments@3.1.1:
     optional: true
 
-  styled-jsx@5.1.6(react@19.0.0-rc-2ec26bc4-20241111):
+  styled-jsx@5.1.6(react@18.3.1):
     dependencies:
       client-only: 0.0.1
-      react: 19.0.0-rc-2ec26bc4-20241111
+      react: 18.3.1
+
+  styled-jsx@5.1.6(react@19.0.0-rc-fb9a90fa48-20240614):
+    dependencies:
+      client-only: 0.0.1
+      react: 19.0.0-rc-fb9a90fa48-20240614
 
   sucrase@3.35.0:
     dependencies:
