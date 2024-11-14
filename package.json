@@ -32,6 +32,7 @@
     "./browser/mocks/cache": "./dist/plugins/next-mocks/alias/cache/index.js",
     "./browser/mocks/navigation": "./dist/plugins/next-mocks/alias/navigation/index.js",
     "./browser/mocks/headers": "./dist/plugins/next-mocks/alias/headers/index.js",
+    "./browser/mocks/v14-headers": "./dist/plugins/next-mocks/alias/headers/v14.js",
     "./browser/mocks/router": "./dist/plugins/next-mocks/alias/router/index.js",
     "./browser/mocks/server-only": "./dist/plugins/next-mocks/alias/rsc/server-only.js",
     "./browser/mocks/dynamic": "./dist/plugins/next-mocks/alias/dynamic/index.js",
@@ -42,6 +43,7 @@
     "./node/mocks/cache": "./dist/plugins/next-mocks/alias/cache/index.cjs",
     "./node/mocks/navigation": "./dist/plugins/next-mocks/alias/navigation/index.cjs",
     "./node/mocks/headers": "./dist/plugins/next-mocks/alias/headers/index.cjs",
+    "./node/mocks/v14-headers": "./dist/plugins/next-mocks/alias/headers/v14.cjs",
     "./node/mocks/router": "./dist/plugins/next-mocks/alias/router/index.cjs",
     "./node/mocks/server-only": "./dist/plugins/next-mocks/alias/rsc/server-only.cjs",
     "./node/mocks/dynamic": "./dist/plugins/next-mocks/alias/dynamic/index.cjs",
@@ -61,7 +63,7 @@
   "peerDependencies": {
     "@storybook/test": "^8.3.0",
     "next": "^15.0.3",
-    "react": "^19.0.0-rc",
+    "react": "^18 || ^19.0.0-rc",
     "storybook": "^8.3.0",
     "vite": "^5.0.0"
   },
@@ -72,6 +74,8 @@
     "@types/react": "npm:types-react@rc",
     "auto": "^11.2.0",
     "lefthook": "^1.6.16",
+    "next": "^15.0.3",
+    "react": "^19.0.0-rc",
     "rollup": "^4.18.0",
     "sharp": "^0.33.4",
     "storybook": "^8.3.0",

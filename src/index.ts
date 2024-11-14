@@ -150,7 +150,7 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin[] {
     vitePluginNextSwc(dir, nextConfigResolver),
     vitePluginNextEnv(dir, nextConfigResolver),
     vitePluginNextImage(nextConfigResolver),
-    vitePluginNextMocks(),
+    vitePluginNextMocks(dir),
     vitePluginNextDynamic(),
   ];
 }

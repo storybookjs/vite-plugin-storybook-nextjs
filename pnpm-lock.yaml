@@ -23,12 +23,6 @@ importers:
       module-alias:
         specifier: ^2.2.3
         version: 2.2.3
-      next:
-        specifier: ^15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
-      react:
-        specifier: ^19.0.0-rc
-        version: 19.0.0-rc-2ec26bc4-20241111
       ts-dedent:
         specifier: ^2.2.0
         version: 2.2.0
@@ -55,6 +49,12 @@ importers:
       lefthook:
         specifier: ^1.6.16
         version: 1.6.16
+      next:
+        specifier: ^15.0.3
+        version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
+      react:
+        specifier: ^19.0.0-rc
+        version: 19.0.0-rc-2ec26bc4-20241111
       rollup:
         specifier: ^4.18.0
         version: 4.18.0

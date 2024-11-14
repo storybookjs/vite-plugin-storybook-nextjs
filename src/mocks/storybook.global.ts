@@ -13,6 +13,6 @@ moduleAlias.addAliases({
     "next/dist/compiled/react-dom/cjs/react-dom-test-utils.production.js",
   ),
   "react-dom": "next/dist/compiled/react-dom",
-  ...getNextMocksAlias("node"),
+  ...getNextMocksAlias(process.cwd(), "node"),
   ...getNextImageAlias("node"),
 });
