@@ -98,7 +98,7 @@
   },
   "pnpm": {
     "overrides": {
-      "vite-plugin-storybook-nextjs": "workspace:*"
+      "vite-plugin-storybook-nextjs": "file:./"
     }
   }
 }
