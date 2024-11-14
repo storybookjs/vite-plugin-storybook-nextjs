@@ -12,7 +12,7 @@ importers:
   .:
     dependencies:
       '@next/env':
-        specifier: ^14.2.5 || ^15.0.3
+        specifier: ^15.0.3
         version: 15.0.3
       image-size:
         specifier: ^1.1.1
@@ -23,12 +23,6 @@ importers:
       module-alias:
         specifier: ^2.2.3
         version: 2.2.3
-      next:
-        specifier: ^14.2.5 || ^15.0.3
-        version: 15.0.3(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@18.3.1))(react@18.3.1)
-      react:
-        specifier: ^18 || ^19.0.0-rc
-        version: 18.3.1
       ts-dedent:
         specifier: ^2.2.0
         version: 2.2.0
@@ -55,6 +49,12 @@ importers:
       lefthook:
         specifier: ^1.6.16
         version: 1.8.2
+      next:
+        specifier: ^15.0.3
+        version: 15.0.3(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614)
+      react:
+        specifier: ^19.0.0-rc
+        version: 19.0.0-rc-fb9a90fa48-20240614
       rollup:
         specifier: ^4.18.0
         version: 4.26.0
@@ -9602,31 +9602,6 @@ snapshots:
       - '@babel/core'
       - babel-plugin-macros
 
-  next@15.0.3(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@18.3.1))(react@18.3.1):
-    dependencies:
-      '@next/env': 15.0.3
-      '@swc/counter': 0.1.3
-      '@swc/helpers': 0.5.13
-      busboy: 1.6.0
-      caniuse-lite: 1.0.30001680
-      postcss: 8.4.31
-      react: 18.3.1
-      react-dom: 19.0.0-rc-fb9a90fa48-20240614(react@18.3.1)
-      styled-jsx: 5.1.6(react@18.3.1)
-    optionalDependencies:
-      '@next/swc-darwin-arm64': 15.0.3
-      '@next/swc-darwin-x64': 15.0.3
-      '@next/swc-linux-arm64-gnu': 15.0.3
-      '@next/swc-linux-arm64-musl': 15.0.3
-      '@next/swc-linux-x64-gnu': 15.0.3
-      '@next/swc-linux-x64-musl': 15.0.3
-      '@next/swc-win32-arm64-msvc': 15.0.3
-      '@next/swc-win32-x64-msvc': 15.0.3
-      sharp: 0.33.5
-    transitivePeerDependencies:
-      - '@babel/core'
-      - babel-plugin-macros
-
   next@15.0.3(react-dom@19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614))(react@19.0.0-rc-fb9a90fa48-20240614):
     dependencies:
       '@next/env': 15.0.3
@@ -10135,11 +10110,6 @@ snapshots:
       react: 18.3.1
       scheduler: 0.23.2
 
-  react-dom@19.0.0-rc-fb9a90fa48-20240614(react@18.3.1):
-    dependencies:
-      react: 18.3.1
-      scheduler: 0.25.0-rc-fb9a90fa48-20240614
-
   react-dom@19.0.0-rc-fb9a90fa48-20240614(react@19.0.0-rc-fb9a90fa48-20240614):
     dependencies:
       react: 19.0.0-rc-fb9a90fa48-20240614
@@ -10598,11 +10568,6 @@ snapshots:
       react: 18.3.1
     optionalDependencies:
       '@babel/core': 7.26.0
-
-  styled-jsx@5.1.6(react@18.3.1):
-    dependencies:
-      client-only: 0.0.1
-      react: 18.3.1
 
   styled-jsx@5.1.6(react@19.0.0-rc-fb9a90fa48-20240614):
     dependencies:
