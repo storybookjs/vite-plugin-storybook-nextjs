@@ -58,7 +58,7 @@ export const getAlias = (env: Env) => {
   };
 };
 
-export const vitePluginNextMocks = (rootDir: string) =>
+export const vitePluginNextMocks = () =>
   ({
     name: "vite-plugin-next-mocks",
     config: (config) => {
