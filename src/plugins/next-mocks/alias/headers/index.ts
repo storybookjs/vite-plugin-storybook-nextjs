@@ -1,5 +1,7 @@
 import { fn } from "@storybook/test";
+// @ts-ignore Exists in next.js 15 later
 import type { UnsafeUnwrappedDraftMode } from "next/dist/server/request/draft-mode";
+// @ts-ignore Exists in next.js 15 later
 import * as originalHeaders from "next/dist/server/request/draft-mode";
 import type { Mock } from "vitest";
 
