@@ -5,6 +5,9 @@ on: [push]
 jobs:
   checks:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        example: [nextjs-v14, nextjs-v15]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,15 +22,15 @@ jobs:
 
       - name: Check if Storybook builds successfully
         run: pnpm build-storybook
-        working-directory: ./example
+        working-directory: ./examples/${{ matrix.example }}
 
       - name: Install Playwright
-        working-directory: ./example
+        working-directory: ./examples/${{ matrix.example }}
         run: pnpm exec playwright install
 
       - name: Run all tests
         run: pnpm test:all
-        working-directory: ./example
+        working-directory: ./examples/${{ matrix.example }}
 
       # - name: Run Portable stories tests
       #   run: pnpm test:storybook
