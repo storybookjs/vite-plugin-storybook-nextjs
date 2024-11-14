@@ -27,7 +27,7 @@ importers:
         specifier: ^15.0.3
         version: 15.0.3(react-dom@19.0.0-rc-2ec26bc4-20241111(react@19.0.0-rc-2ec26bc4-20241111))(react@19.0.0-rc-2ec26bc4-20241111)(sass@1.77.6)
       react:
-        specifier: ^18 || ^19.0.0-rc
+        specifier: ^19.0.0-rc
         version: 19.0.0-rc-2ec26bc4-20241111
       ts-dedent:
         specifier: ^2.2.0
@@ -47,8 +47,8 @@ importers:
         specifier: ^18
         version: 18.19.38
       '@types/react':
-        specifier: ^18
-        version: 18.3.3
+        specifier: npm:types-react@rc
+        version: types-react@19.0.0-rc.1
       auto:
         specifier: ^11.2.0
         version: 11.2.0(@types/node@18.19.38)(typescript@5.4.5)
