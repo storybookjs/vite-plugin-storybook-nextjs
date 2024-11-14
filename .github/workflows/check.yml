@@ -20,6 +20,9 @@ jobs:
       - name: Build the plugin
         run: pnpm build
 
+      - name: install built plugin
+        run: pnpm install
+
       - name: Check if Storybook builds successfully
         run: pnpm build-storybook
         working-directory: ./examples/${{ matrix.example }}
