@@ -12,7 +12,7 @@ importers:
   .:
     dependencies:
       '@next/env':
-        specifier: ^15.0.3
+        specifier: ^14.2.5 || ^15.0.3
         version: 15.0.3
       image-size:
         specifier: ^1.1.1
