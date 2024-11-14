@@ -18,17 +18,16 @@ export const getAlias = (env: Env) => {
     10,
   );
 
+  const headersMock =
+    nextMajorVersion <= 14
+      ? getEntryPoint("v14-headers", env)
+      : getEntryPoint("headers", env);
+
   return {
-    "next/headers":
-      nextMajorVersion <= 14
-        ? getEntryPoint("v14-headers", env)
-        : getEntryPoint("headers", env),
-    "@storybook/nextjs/headers.mock": getEntryPoint("headers", env),
-    "@storybook/nextjs-vite/headers.mock": getEntryPoint("headers", env),
-    "@storybook/experimental-nextjs-vite/headers.mock": getEntryPoint(
-      "headers",
-      env,
-    ),
+    "next/headers": headersMock,
+    "@storybook/nextjs/headers.mock": headersMock,
+    "@storybook/nextjs-vite/headers.mock": headersMock,
+    "@storybook/experimental-nextjs-vite/headers.mock": headersMock,
     "next/navigation": getEntryPoint("navigation", env),
     "@storybook/nextjs/navigation.mock": getEntryPoint("navigation", env),
     "@storybook/nextjs-vite/navigation.mock": getEntryPoint("navigation", env),
