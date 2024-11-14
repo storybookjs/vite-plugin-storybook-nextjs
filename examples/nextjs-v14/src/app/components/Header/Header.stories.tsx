@@ -27,7 +27,6 @@ export const Default: Story = {
     const canvas = within(canvasElement);
     const headersMock = headers();
     const cookiesMock = cookies();
-    console.log(cookiesMock);
     await step(
       "Cookie and header store apis are called upon rendering",
       async () => {
