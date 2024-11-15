@@ -16,17 +16,17 @@ type Story = StoryObj<typeof NextHeader>;
 
 export const Default: Story = {
   loaders: async () => {
-    cookies().set("firstName", "Jane");
-    cookies().set({
+    (await cookies()).set("firstName", "Jane");
+    (await cookies()).set({
       name: "lastName",
       value: "Doe",
     });
-    headers().set("timezone", "Central European Summer Time");
+    (await headers()).set("timezone", "Central European Summer Time");
   },
   play: async ({ canvasElement, step }) => {
     const canvas = within(canvasElement);
-    const headersMock = headers();
-    const cookiesMock = cookies();
+    const headersMock = await headers();
+    const cookiesMock = await cookies();
     await step(
       "Cookie and header store apis are called upon rendering",
       async () => {
