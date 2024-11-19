@@ -16,22 +16,22 @@
   },
   "dependencies": {
     "next": "^15.0.3",
-    "react": "^19.0.0-rc",
-    "react-dom": "^19.0.0-rc",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106",
     "styled-jsx": "^5.1.6"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
-    "@storybook/addon-actions": "^8.4.3",
-    "@storybook/addon-essentials": "^8.4.3",
-    "@storybook/addon-links": "^8.4.3",
-    "@storybook/addon-onboarding": "^8.4.3",
-    "@storybook/addon-toolbars": "^8.4.3",
-    "@storybook/blocks": "^8.4.3",
-    "@storybook/experimental-addon-test": "^8.4.3",
-    "@storybook/experimental-nextjs-vite": "^8.4.3",
-    "@storybook/react": "^8.4.3",
-    "@storybook/test": "^8.4.3",
+    "@storybook/addon-actions": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/addon-essentials": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/addon-links": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/addon-onboarding": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/addon-toolbars": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/blocks": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/experimental-addon-test": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/experimental-nextjs-vite": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/react": "0.0.0-pr-29640-sha-3521df0d",
+    "@storybook/test": "0.0.0-pr-29640-sha-3521df0d",
     "@testing-library/dom": "^10.3.2",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
@@ -47,14 +47,20 @@
     "playwright": "^1.45.3",
     "postcss": "^8.4.38",
     "serve": "^14.2.3",
-    "storybook": "^8.4.3",
+    "storybook": "0.0.0-pr-29640-sha-3521df0d",
     "tailwindcss": "^3.4.4",
     "typescript": "^5",
     "vite-plugin-inspect": "^0.8.5",
     "vitest": "^2.1.4"
   },
-  "overrides": {
+  "resolutions": {
     "@types/react": "npm:types-react@rc",
-    "@types/react-dom": "npm:types-react-dom@rc"
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "react": "19.0.0-rc-66855b96-20241106",
+    "react-dom": "19.0.0-rc-66855b96-20241106"
+  },
+  "dependenciesMeta": {
+    "react": {},
+    "react-dom": {}
   }
 }

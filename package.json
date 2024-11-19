@@ -8,16 +8,12 @@
     "storybook",
     "vitest"
   ],
-  "author": "Storybook Bot <storybookbot@gmail.com>",
   "license": "MIT",
+  "author": "Storybook Bot <storybookbot@gmail.com>",
   "sideEffects": [
     "./src/polyfills/promise-with-resolvers.ts"
   ],
-  "files": [
-    "dist"
-  ],
   "type": "module",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": {
@@ -52,21 +48,30 @@
     "./node/mocks/image-default-loader": "./dist/plugins/next-image/alias/image-default-loader.cjs",
     "./node/mocks/image-context": "./dist/plugins/next-image/alias/image-context.cjs"
   },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "workspaces": [
+    "examples/*"
+  ],
   "scripts": {
-    "prepublishOnly": "pnpm build",
     "build": "tsup",
-    "dev": "pnpm build --watch",
     "check": "biome check",
     "check:write": "biome check --write",
+    "dev": "pnpm build --watch",
+    "prepublishOnly": "pnpm build",
     "release": "auto shipit"
   },
-  "peerDependencies": {
-    "@storybook/test": "^8.4.3",
-    "@next/env": "^14.2.5 || ^15.0.3",
-    "next": "^14.2.5 || ^15.0.3",
-    "react": "^18 || ^19.0.0-rc",
-    "storybook": "^8.4.3",
-    "vite": "^5.0.0"
+  "resolutions": {
+    "vite-plugin-storybook-nextjs": "workspace:*"
+  },
+  "dependencies": {
+    "@next/env": "^15.0.3",
+    "image-size": "^1.1.1",
+    "magic-string": "^0.30.11",
+    "module-alias": "^2.2.3",
+    "ts-dedent": "^2.2.0"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.1",
@@ -76,7 +81,7 @@
     "auto": "^11.2.0",
     "lefthook": "^1.6.16",
     "next": "^15.0.3",
-    "react": "^19.0.0-rc",
+    "react": "19.0.0-rc-66855b96-20241106",
     "rollup": "^4.18.0",
     "sharp": "^0.33.4",
     "storybook": "^8.4.3",
@@ -85,13 +90,13 @@
     "vite": "^5.0.0",
     "vitest": "^2.1.4"
   },
-  "packageManager": "pnpm@9.4.0",
-  "dependencies": {
-    "@next/env": "^15.0.3",
-    "image-size": "^1.1.1",
-    "magic-string": "^0.30.11",
-    "module-alias": "^2.2.3",
-    "ts-dedent": "^2.2.0"
+  "peerDependencies": {
+    "@next/env": "^14.2.5 || ^15.0.3",
+    "@storybook/test": "^8.4.3",
+    "next": "^14.2.5 || ^15.0.3",
+    "react": "^18 || ^19.0.0-rc",
+    "storybook": "^8.4.3",
+    "vite": "^5.0.0"
   },
   "optionalDependencies": {
     "sharp": "^0.33.4"
@@ -99,9 +104,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "pnpm": {
-    "overrides": {
-      "vite-plugin-storybook-nextjs": "file:./"
-    }
-  }
+  "packageManager": "yarn@4.5.1"
 }
