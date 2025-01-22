@@ -1,4 +1,5 @@
 import { createRequire } from "node:module";
+import path, { resolve } from "node:path";
 import type { Plugin } from "vite";
 import { VITEST_PLUGIN_NAME, getExecutionEnvironment } from "../../utils";
 
@@ -39,6 +40,9 @@ export const getAlias = (env: Env) => ({
   "@opentelemetry/api": require.resolve(
     "next/dist/compiled/@opentelemetry/api",
   ),
+  "styled-jsx/style.js": resolve("styled-jsx/style"),
+  "styled-jsx/style": require.resolve("styled-jsx/style"),
+  "styled-jsx": path.dirname(require.resolve("styled-jsx/package.json")),
   "next/dynamic": getEntryPoint("dynamic", env),
 });
 

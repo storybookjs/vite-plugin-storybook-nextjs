@@ -23,6 +23,9 @@ importers:
       module-alias:
         specifier: ^2.2.3
         version: 2.2.3
+      styled-jsx:
+        specifier: ^5.1.6
+        version: 5.1.6(react@18.3.1)
       ts-dedent:
         specifier: ^2.2.0
         version: 2.2.0
