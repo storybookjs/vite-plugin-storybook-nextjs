@@ -32,9 +32,17 @@ type VitePluginOptions = {
    * @default process.cwd()
    */
   dir?: string;
+  /**
+   * Force alias in test environment
+   * @default false
+   */
+  forceAliasInTest?: boolean;
 };
 
-function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin[] {
+function VitePlugin({
+  dir = process.cwd(),
+  forceAliasInTest = process.env.STORYBOOK_FORCE_ALIAS_IN_TEST === "true",
+}: VitePluginOptions = {}): Plugin[] {
   const resolvedDir = resolve(dir);
   const nextConfigResolver = Promise.withResolvers<NextConfigComplete>();
 
@@ -56,7 +64,7 @@ function VitePlugin({ dir = process.cwd() }: VitePluginOptions = {}): Plugin[] {
         const executionEnvironment = getExecutionEnvironment(config);
 
         return {
-          ...(!isVitestEnv && {
+          ...((forceAliasInTest || !isVitestEnv) && {
             resolve: {
               alias: [
                 {
