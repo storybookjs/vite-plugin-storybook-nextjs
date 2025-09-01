@@ -54,7 +54,7 @@ export function vitePluginNextImage(
             : path.join(path.dirname(importer), source)
           : source;
 
-        return `${virtualImage}?imagePath=${imagePath}`;
+        return `${virtualImage}?imagePath=${imagePath.replace(/\\/g, "/")}`;
       }
 
       if (id === "next/image" && importer !== virtualNextImage) {
