@@ -10,6 +10,7 @@ import { vitePluginNextFont } from "./plugins/next-font/plugin";
 import { vitePluginNextSwc } from "./plugins/next-swc/plugin";
 
 import "./polyfills/promise-with-resolvers";
+import { needsExperimentalReact } from "next/dist/lib/needs-experimental-react.js";
 import nextServerConfig from "next/dist/server/config.js";
 import {
   PHASE_DEVELOPMENT_SERVER,
@@ -53,7 +54,12 @@ function VitePlugin({
               ? PHASE_TEST
               : PHASE_PRODUCTION_BUILD;
 
-        nextConfigResolver.resolve(await loadConfig(phase, resolvedDir));
+        const nextConfig = await loadConfig(phase, resolvedDir);
+        nextConfigResolver.resolve(nextConfig);
+
+        const bundledReactChannel = needsExperimentalReact(nextConfig)
+          ? "-experimental"
+          : "";
 
         const executionEnvironment = getExecutionEnvironment(config);
 
@@ -63,46 +69,50 @@ function VitePlugin({
               alias: [
                 {
                   find: /^react$/,
-                  replacement: require.resolve("next/dist/compiled/react"),
+                  replacement: require.resolve(
+                    `next/dist/compiled/react${bundledReactChannel}`,
+                  ),
                 },
                 {
                   find: /^react\/jsx-runtime$/,
                   replacement: require.resolve(
-                    "next/dist/compiled/react/jsx-runtime",
+                    `next/dist/compiled/react${bundledReactChannel}/jsx-runtime`,
                   ),
                 },
                 {
                   find: /^react\/jsx-dev-runtime$/,
                   replacement: require.resolve(
-                    "next/dist/compiled/react/jsx-dev-runtime",
+                    `next/dist/compiled/react${bundledReactChannel}/jsx-dev-runtime`,
                   ),
                 },
                 {
                   find: /^react-dom$/,
-                  replacement: require.resolve("next/dist/compiled/react-dom"),
+                  replacement: require.resolve(
+                    `next/dist/compiled/react-dom${bundledReactChannel}`,
+                  ),
                 },
                 {
                   find: /^react-dom\/server$/,
                   replacement: require.resolve(
-                    "next/dist/compiled/react-dom/server.browser.js",
+                    `next/dist/compiled/react-dom${bundledReactChannel}/server.browser.js`,
                   ),
                 },
                 {
                   find: /^react-dom\/test-utils$/,
                   replacement: require.resolve(
-                    "next/dist/compiled/react-dom/cjs/react-dom-test-utils.production.js",
+                    `next/dist/compiled/react-dom${bundledReactChannel}/cjs/react-dom-test-utils.production.js`,
                   ),
                 },
                 {
                   find: /^react-dom\/client$/,
                   replacement: require.resolve(
-                    "next/dist/compiled/react-dom/client.js",
+                    `next/dist/compiled/react-dom${bundledReactChannel}/client.js`,
                   ),
                 },
                 {
                   find: /^react-dom\/cjs\/react-dom\.development\.js$/,
                   replacement: require.resolve(
-                    "next/dist/compiled/react-dom/cjs/react-dom.development.js",
+                    `next/dist/compiled/react-dom${bundledReactChannel}/cjs/react-dom.development.js`,
                   ),
                 },
               ],
@@ -136,33 +146,37 @@ function VitePlugin({
           test: {
             alias: {
               "react/jsx-dev-runtime": require.resolve(
-                "next/dist/compiled/react/jsx-dev-runtime.js",
+                `next/dist/compiled/react${bundledReactChannel}/jsx-dev-runtime.js`,
               ),
               "react/jsx-runtime": require.resolve(
-                "next/dist/compiled/react/jsx-runtime.js",
+                `next/dist/compiled/react${bundledReactChannel}/jsx-runtime.js`,
               ),
 
-              react: require.resolve("next/dist/compiled/react"),
+              react: require.resolve(
+                `next/dist/compiled/react${bundledReactChannel}`,
+              ),
 
               "react-dom/server": require.resolve(
                 executionEnvironment === "node"
-                  ? "next/dist/compiled/react-dom/server.js"
-                  : "next/dist/compiled/react-dom/server.browser.js",
+                  ? `next/dist/compiled/react-dom${bundledReactChannel}/server.js`
+                  : `next/dist/compiled/react-dom${bundledReactChannel}/server.browser.js`,
               ),
 
               "react-dom/test-utils": require.resolve(
-                "next/dist/compiled/react-dom/cjs/react-dom-test-utils.production.js",
+                `next/dist/compiled/react-dom${bundledReactChannel}/cjs/react-dom-test-utils.production.js`,
               ),
 
               "react-dom/cjs/react-dom.development.js": require.resolve(
-                "next/dist/compiled/react-dom/cjs/react-dom.development.js",
+                `next/dist/compiled/react-dom${bundledReactChannel}/cjs/react-dom.development.js`,
               ),
 
               "react-dom/client": require.resolve(
-                "next/dist/compiled/react-dom/client.js",
+                `next/dist/compiled/react-dom${bundledReactChannel}/client.js`,
               ),
 
-              "react-dom": require.resolve("next/dist/compiled/react-dom"),
+              "react-dom": require.resolve(
+                `next/dist/compiled/react-dom${bundledReactChannel}`,
+              ),
             },
           },
         };
