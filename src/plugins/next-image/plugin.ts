@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import { createRequire } from "node:module";
 import path from "node:path";
+import { join } from "node:path/posix";
 import { decode, encode } from "node:querystring";
 import { imageSize } from "image-size";
 import type { NextConfigComplete } from "next/dist/server/config-shared.js";
@@ -51,7 +52,7 @@ export function vitePluginNextImage(
         const imagePath = importer
           ? isAbsolute
             ? source
-            : path.join(path.dirname(importer), source)
+            : join(path.dirname(importer), source)
           : source;
 
         return `${virtualImage}?${encode({ imagePath })}`;
