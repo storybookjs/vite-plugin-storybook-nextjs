@@ -67,7 +67,7 @@ export function vitePluginNextFont() {
 
       let fontFaceDeclaration: FontFaceDeclaration | undefined;
 
-      const pathSep = path.sep;
+      const pathSep = path.posix.sep;
 
       if (
         sourceWithoutQuery.endsWith(
@@ -91,11 +91,13 @@ export function vitePluginNextFont() {
             fontExtension,
           );
 
-          const fontPath = path.join(importerDirPath, importerRelativeFontPath);
+          const fontPath = path
+	    .join(importerDirPath, importerRelativeFontPath)
+	    .replaceAll(path.win32.sep, path.posix.sep);
 
           if (devMode) {
             return {
-              fontPath: path.join(cwd, fontPath),
+              fontPath: fontPath,
               fontReferenceId: undefined,
             };
           }
