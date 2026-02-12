@@ -1,5 +1,11 @@
 ## 3.1.12
 
+## 3.2.0
+
+### Minor Changes
+
+- [#95](https://github.com/storybookjs/vite-plugin-storybook-nextjs/pull/95) [`b24bcc0`](https://github.com/storybookjs/vite-plugin-storybook-nextjs/commit/b24bcc0aed2dbd5c705323edf81b1ebb4d800651) Thanks [@yannbf](https://github.com/yannbf)! - Add support for Vite 8
+
 ### Patch Changes
 
 - [#91](https://github.com/storybookjs/vite-plugin-storybook-nextjs/pull/91) [`a671255`](https://github.com/storybookjs/vite-plugin-storybook-nextjs/commit/a671255a12f8376a1ab343ae26013f67bb9ba719) Thanks [@ButterflyBug](https://github.com/ButterflyBug)! - Support unstable_rethrow from next/navigation
