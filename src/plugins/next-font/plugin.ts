@@ -67,21 +67,11 @@ export function vitePluginNextFont() {
 
       let fontFaceDeclaration: FontFaceDeclaration | undefined;
 
-      const pathSep = path.sep;
-
-      if (
-        sourceWithoutQuery.endsWith(
-          ["next", "font", "google", "target.css"].join(pathSep),
-        )
-      ) {
+      if (sourceWithoutQuery.endsWith("next/font/google/target.css")) {
         fontFaceDeclaration = await getGoogleFontFaceDeclarations(fontOptions);
       }
 
-      if (
-        sourceWithoutQuery.endsWith(
-          ["next", "font", "local", "target.css"].join(pathSep),
-        )
-      ) {
+      if (sourceWithoutQuery.endsWith("next/font/local/target.css")) {
         const importerDirPath = path.dirname(fontOptions.filename);
 
         const emitFont = async (importerRelativeFontPath: string) => {
