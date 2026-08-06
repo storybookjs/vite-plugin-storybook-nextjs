@@ -4,11 +4,16 @@ import type { PluginContext } from "rollup";
 import { describe, expect, it, vi } from "vitest";
 
 const requireResolveMock = vi.hoisted(() => vi.fn());
+const readFileMock = vi.hoisted(() => vi.fn());
 
 vi.mock("node:module", () => ({
   createRequire: () => ({
     resolve: requireResolveMock,
   }),
+}));
+
+vi.mock("node:fs", () => ({
+  default: { promises: { readFile: readFileMock } },
 }));
 
 import { vitePluginNextImage } from "./plugin";
@@ -83,5 +88,57 @@ describe("vitePluginNextImage resolveId", () => {
       { paths: [path.dirname(importer.split("?")[0])] },
     );
     expect(result).toBe(`virtual:next-image?imagePath=${resolvedPath}`);
+  });
+});
+
+describe("vitePluginNextImage load", () => {
+  const nextConfigResolver = {
+    promise: Promise.resolve({} as NextConfigComplete),
+    resolve: vi.fn(),
+    reject: vi.fn(),
+  } as PromiseWithResolvers<NextConfigComplete>;
+
+  // Mirrors the URL-safe base64 encoding the plugin uses for virtual module IDs
+  const virtualIdFor = (imagePath: string) =>
+    `\0virtual:next-image:${Buffer.from(imagePath)
+      .toString("base64")
+      .replace(/\+/g, "-")
+      .replace(/\//g, "_")
+      .replace(/=/g, "")}`;
+
+  // 1x1 red PNG
+  const pngFixture = Buffer.from(
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+    "base64",
+  );
+
+  it("reads dimensions from the image buffer", async () => {
+    const plugin = vitePluginNextImage(nextConfigResolver);
+    readFileMock.mockResolvedValueOnce(pngFixture);
+
+    // biome-ignore lint/style/noNonNullAssertion: load is always defined
+    const result = await plugin.load!.call(
+      {} as PluginContext,
+      virtualIdFor("/project/src/images/avatar.png"),
+    );
+
+    expect(result).toContain("width: 1");
+    expect(result).toContain("height: 1");
+  });
+
+  it("does not hang on malformed image data", async () => {
+    const plugin = vitePluginNextImage(nextConfigResolver);
+    const errorSpy = vi.spyOn(console, "error").mockImplementation(() => {});
+    readFileMock.mockResolvedValueOnce(Buffer.alloc(64));
+
+    // biome-ignore lint/style/noNonNullAssertion: load is always defined
+    const result = await plugin.load!.call(
+      {} as PluginContext,
+      virtualIdFor("/project/src/images/broken.png"),
+    );
+
+    expect(result).toBeUndefined();
+    expect(errorSpy).toHaveBeenCalled();
+    errorSpy.mockRestore();
   });
 });
