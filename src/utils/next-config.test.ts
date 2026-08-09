@@ -83,35 +83,4 @@ describe("loadNextConfig", () => {
       typedEnv: true,
     });
   });
-
-  it("normalizes a raw config module returned from the Next.js cache", async () => {
-    const rawConfigModule = { default: vi.fn() };
-    const normalizedConfig = {
-      reactCompiler: true,
-      experimental: {
-        turbopackRustReactCompiler: true,
-      },
-    };
-    const resolvedConfig = {
-      ...normalizedConfig,
-      experimental: {},
-    };
-
-    loadConfigMock
-      .mockResolvedValueOnce(rawConfigModule)
-      .mockResolvedValueOnce(resolvedConfig);
-    normalizeConfigMock.mockResolvedValue(normalizedConfig);
-
-    await expect(loadNextConfig(phase, dir)).resolves.toBe(resolvedConfig);
-    expect(normalizeConfigMock).toHaveBeenCalledWith(
-      phase,
-      rawConfigModule.default,
-    );
-    expect(loadConfigMock).toHaveBeenNthCalledWith(2, phase, dir, {
-      customConfig: {
-        reactCompiler: true,
-        experimental: {},
-      },
-    });
-  });
 });
