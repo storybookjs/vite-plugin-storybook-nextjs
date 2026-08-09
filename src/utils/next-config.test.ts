@@ -22,7 +22,7 @@ describe("loadNextConfig", () => {
   });
 
   it("uses Next.js config loading unchanged by default", async () => {
-    const config = { distDir: ".next" };
+    const config = { distDir: ".next", experimental: {} };
     loadConfigMock.mockResolvedValue(config);
 
     await expect(loadNextConfig(phase, dir)).resolves.toBe(config);
@@ -81,6 +81,37 @@ describe("loadNextConfig", () => {
     expect(normalizedConfig.experimental).toEqual({
       turbopackRustReactCompiler: true,
       typedEnv: true,
+    });
+  });
+
+  it("normalizes a raw config module returned from the Next.js cache", async () => {
+    const rawConfigModule = { default: vi.fn() };
+    const normalizedConfig = {
+      reactCompiler: true,
+      experimental: {
+        turbopackRustReactCompiler: true,
+      },
+    };
+    const resolvedConfig = {
+      ...normalizedConfig,
+      experimental: {},
+    };
+
+    loadConfigMock
+      .mockResolvedValueOnce(rawConfigModule)
+      .mockResolvedValueOnce(resolvedConfig);
+    normalizeConfigMock.mockResolvedValue(normalizedConfig);
+
+    await expect(loadNextConfig(phase, dir)).resolves.toBe(resolvedConfig);
+    expect(normalizeConfigMock).toHaveBeenCalledWith(
+      phase,
+      rawConfigModule.default,
+    );
+    expect(loadConfigMock).toHaveBeenNthCalledWith(2, phase, dir, {
+      customConfig: {
+        reactCompiler: true,
+        experimental: {},
+      },
     });
   });
 });

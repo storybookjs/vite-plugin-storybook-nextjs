@@ -1,4 +1,4 @@
-import { resolve } from "pathe";
+import { dirname, resolve } from "pathe";
 
 import { createRequire } from "node:module";
 import type { NextConfigComplete } from "next/dist/server/config-shared.js";
@@ -31,6 +31,10 @@ import {
 import { loadNextConfig } from "./utils/next-config";
 
 const require = createRequire(import.meta.url);
+const compiledReactDir = dirname(require.resolve("next/dist/compiled/react"));
+const compiledReactDomDir = dirname(
+  require.resolve("next/dist/compiled/react-dom"),
+);
 
 export type PluginOptions = {
   /**
@@ -195,6 +199,8 @@ function VitePlugin({
           },
           test: {
             alias: {
+              "next/dist/compiled/react": compiledReactDir,
+              "next/dist/compiled/react-dom": compiledReactDomDir,
               "react/jsx-dev-runtime": require.resolve(
                 "next/dist/compiled/react/jsx-dev-runtime.js",
               ),

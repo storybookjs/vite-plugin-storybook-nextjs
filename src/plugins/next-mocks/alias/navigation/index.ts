@@ -68,11 +68,11 @@ export * from "next/dist/client/components/navigation.js";
 // to static ESM analysis. In dev Vite serves this mock as native ESM, where the browser
 // rejects named imports it cannot see, hence the explicit re-exports.
 // See https://github.com/storybookjs/storybook/issues/34688.
-export {
-  ReadonlyURLSearchParams,
-  RedirectType,
-  ServerInsertedHTMLContext,
-} from "next/dist/client/components/navigation.js";
+export const ReadonlyURLSearchParams: typeof actual.ReadonlyURLSearchParams =
+  actual.ReadonlyURLSearchParams;
+export const RedirectType: typeof actual.RedirectType = actual.RedirectType;
+export const ServerInsertedHTMLContext: typeof actual.ServerInsertedHTMLContext =
+  actual.ServerInsertedHTMLContext;
 
 // Newer than our minimum supported Next.js, hence via the namespace: that keeps the export
 // statically declared but resolves to `undefined` on older releases instead of breaking
