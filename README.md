@@ -1,3 +1,7 @@
+> [!IMPORTANT]  
+> The content of this repo has been moved into Storybook repo: [`vite-plugin-storybook-nextjs`](https://github.com/storybookjs/storybook/tree/next/code/lib/vite-plugin-storybook-nextjs)
+
+
 # vite-plugin-storybook-nextjs
 
 This is a Vite plugin that allows you to use Next.js features in Vite. It is the basis for `@storybook/experimental-nextjs-vite` and should be used when running portable stories in Vitest.
