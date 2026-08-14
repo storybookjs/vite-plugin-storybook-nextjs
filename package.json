@@ -116,5 +116,9 @@
       "vite-plugin-storybook-nextjs": "workspace:*",
       "next": "16.3.0-preview.5"
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/storybookjs/vite-plugin-storybook-nextjs/issues"
+  },
+  "homepage": "https://github.com/storybookjs/vite-plugin-storybook-nextjs#readme"
 }
